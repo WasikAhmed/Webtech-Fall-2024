@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee</title>
+    <title>Admin Registration</title>
 </head>
 <body>
-    <h1>Employee</h1>
+    
 </body>
 </html>
