@@ -12,11 +12,14 @@
 
     <?php
     // Controller
-    include('../../../controllers/registration_controller.php');
+    include('../../../controllers/seller_reg_controller.php');
     ?>
 
-    <form action="../../../controllers/registration_controller.php" method="post">
-        
+    <?php if (isset($submission_message)) : ?>
+        <p><?php echo $submission_message; ?></p>
+    <?php endif; ?>
+
+    <form action="" method="post" enctype="multipart/form-data">
         <!-- Personal Information Section -->
         <fieldset>
             <legend><b>Personal Information</b></legend>
@@ -24,21 +27,26 @@
                 <tr>
                     <td><label for="full_name">Full Name:</label></td>
                     <td><input type="text" id="full_name" name="full_name" minlength="4" ></td>
+                    <td><?php echo isset($errors["name_err"]) ? $errors["name_err"] : ""; ?></td>
                 </tr>
                 <tr><td colspan="2">&nbsp;</td></tr>
                 <tr>
                     <td><label for="email">Email:</label></td>
                     <td><input type="email" id="email" name="email" pattern=".+@aiub\.edu" ></td>
+                    <td><?php echo isset($errors["email_required_err"]) ? $errors["email_required_err"] : ""; ?></td>
+                    <td><?php echo isset($errors["email_validation_err"]) ? $errors["email_validation_err"] : ""; ?></td>
                 </tr>
                 <tr><td colspan="2">&nbsp;</td></tr>
                 <tr>
                     <td><label for="password">Password:</label></td>
                     <td><input type="password" id="password" name="password" minlength="6" ></td>
+                    <td><?php echo isset($errors["pass_err"]) ? $errors["pass_err"] : ""; ?></td>
                 </tr>
                 <tr><td colspan="2">&nbsp;</td></tr>
                 <tr>
                     <td><label for="phone">Phone Number:</label></td>
                     <td><input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}" ></td>
+                    <td><?php echo isset($errors["phone_err"]) ? $errors["phone_err"] : ""; ?></td>
                 </tr>
             </table>
         </fieldset>
@@ -78,6 +86,7 @@
                             <option value="service">Service Provider</option>
                         </select>
                     </td>
+                    <td><?php echo isset($errors["business_type_err"]) ? $errors["business_type_err"] : ""; ?></td>
                 </tr>
                 <tr><td colspan="2">&nbsp;</td></tr>
                 <tr>
@@ -101,6 +110,7 @@
                             <option value="sms">SMS</option>
                         </select>
                     </td>
+                    <td><?php echo isset($errors["contact_method_err"]) ? $errors["contact_method_err"] : ""; ?></td>
                 </tr>
                 <tr><td colspan="2">&nbsp;</td></tr>
                 <tr>
@@ -111,12 +121,13 @@
                 <tr>
                     <td><label for="terms">Agree to Terms & Conditions:</label></td>
                     <td><input type="checkbox" id="terms" name="terms" > I agree</td>
+                    <td><?php echo isset($errors["terms_err"]) ? $errors["terms_err"] : ""; ?></td>
                 </tr>
             </table>
         </fieldset>
 
         <br>
-        <input type="submit" value="Register as Seller">
+        <input type="submit" name="submit" value="Submit">
     </form>
 
 </body>
