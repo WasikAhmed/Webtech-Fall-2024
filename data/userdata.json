@@ -1,0 +1,22 @@
+[
+    {
+        "fullname": "Sumaya Islam",
+        "email": "islamsumaya688@gmail.com",
+        "phone": "01874531946",
+        "address": "vfg fh",
+        "password": "$2y$10$TsEri13kIyJGpxppaYQCe.unLFiKumq48QWblKWsj4yTDDVg1O8Be",
+        "country": "bangladesh",
+        "buy": "yes",
+        "payment_method": "credit_card"
+    },
+    {
+        "fullname": "Yo",
+        "email": "nikketbarbula@gmail.com",
+        "phone": "01874531946",
+        "address": "vfg fh",
+        "password": "$2y$10$sumOOffpRWhkEtsACGkxAOOj4a20GHPIZUPMCQ0Drh.Uo9USKvUTu",
+        "country": "bangladesh",
+        "buy": "yes",
+        "payment_method": "credit_card"
+    }
+]
